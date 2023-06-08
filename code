@@ -1,0 +1,41 @@
+import java.util.*;
+public class MyProgram
+{
+    public static void main(String[] args)
+    {
+        // this is where the user enters his palidrome
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a word to test if is a palindrome: ");
+        String userPalindrome = input.nextLine();
+        int lengthOfPalindrome = userPalindrome.length();
+        String flip = "";
+        
+        while(!(userPalindrome.equals("no")))
+        {
+            for (int i = lengthOfPalindrome -1 ; i>=0; i--)
+            {
+                flip += userPalindrome.charAt(i);
+            }
+            System.out.println(flip);
+            if(userPalindrome.equalsIgnoreCase(flip))
+            {
+                System.out.println("It's a palindrome.");
+                System.out.println("Enter a word to test if is a palindrome: ");
+                userPalindrome = input.nextLine();
+                lengthOfPalindrome = userPalindrome.length();
+                flip = "";
+            }
+            else
+            {
+                System.out.println("It's not a palindrome.");
+                System.out.println("Enter a word to test if is a palindrome: ");
+                userPalindrome = input.nextLine();
+                lengthOfPalindrome = userPalindrome.length();
+                flip = "";
+            }
+            
+                
+        }
+        
+    }
+}
